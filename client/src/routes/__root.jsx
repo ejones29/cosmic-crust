@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -11,15 +11,18 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const cartHook = useState([]);
   return (
-    <React.Fragment>
-      <div>
-        <Header />
-        <Outlet />
-        <PizzaOfTheDay />
-      </div>
+    <>
+      <CartContext.Provider value={cartHook}>
+        <div>
+          <Header />
+          <Outlet />
+          <PizzaOfTheDay />
+        </div>
+      </CartContext.Provider>
       <TanStackRouterDevtools />
       <ReactQueryDevtools />
-    </React.Fragment>
+    </>
   );
 }

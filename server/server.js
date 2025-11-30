@@ -19,10 +19,10 @@ const __dirname = path.dirname(__filename);
 
 const db = await AsyncDatabase.open("./pizza.sqlite");
 
-server.register(fastifyStatic, {
-  root: path.join(__dirname, "public"),
-  prefix: "/public/",
-});
+// server.register(fastifyStatic, {
+//   root: path.join(__dirname, "public"),
+//   prefix: "/public/",
+// });
 
 server.get("/api/pizzas", async function getPizzas(req, res) {
   const pizzasPromise = db.all(
