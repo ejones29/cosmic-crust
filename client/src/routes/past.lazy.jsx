@@ -7,6 +7,7 @@ import Modal from "../Modal";
 import ErrorBoundary from "../ErrorBoundary";
 
 export const Route = createLazyFileRoute("/past")({
+  // component: PastOrdersRoute,
   component: ErrorBoundaryWrappedPastOrderRoutes,
 });
 
@@ -27,22 +28,22 @@ function PastOrdersRoute() {
   const [page, setPage] = useState(1);
   const [focusedOrder, setFocusedOrder] = useState();
   const { isLoading, data } = useQuery({
-    queryKey: ["past-orders", page],
+    queryKey: ["pastOrders", page],
     queryFn: () => getPastOrders(page),
     staleTime: 30000,
   });
 
   const { isLoading: isLoadingPastOrder, data: pastOrderData } = useQuery({
-    queryKey: ["past-order", focusedOrder],
+    queryKey: ["pastOrder", focusedOrder],
     queryFn: () => getPastOrder(focusedOrder),
+    staleTime: 24 * 60 * 60 * 1000, // 24 hours
     enabled: !!focusedOrder,
-    staleTime: 24 * 60 * 60 * 1000, // one day in milliseconds,
   });
 
   if (isLoading) {
     return (
       <div className="past-orders">
-        <h2>LOADING …</h2>
+        <h2>LOADING...</h2>
       </div>
     );
   }
