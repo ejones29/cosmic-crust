@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Header from "../components/Header";
 import PizzaOfTheDay from "../components/PizzaOfTheDay";

@@ -5,7 +5,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { routeTree } from "./routeTree.gen";
 
 const router = createRouter({ routeTree });
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // setting this to true enables experimental support for React Suspense with useQueryPromise and React.use
+      // See https://tanstack.com/query/latest/docs/framework/react/guides/suspense#using-usequerypromise-and-reactuse-experimental for more info
+      experimental_prefetchInRender: true,
+    },
+  },
+});
 
 const App = () => {
   return (
