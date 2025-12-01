@@ -9,7 +9,7 @@ function Index() {
     <div className="index">
       <div className="index-brand">
         <h1>Cosmic Crust</h1>
-        <p>Outta this world pizza</p>
+        <p>Where every slice is outta this world.🍕✨</p>
       </div>
       <ul>
         <li>

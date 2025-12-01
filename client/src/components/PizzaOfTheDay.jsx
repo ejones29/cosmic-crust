@@ -16,7 +16,7 @@ const PizzaOfTheDay = () => {
   return (
     <div className="pizza-of-the-day">
       <h2>Pizza of the Day</h2>
-      <div>
+      <div className="pizza-of-the-day-content">
         <div className="pizza-of-the-day-info">
           <h3>{pizzaOfTheDay.name}</h3>
           <p>{pizzaOfTheDay.description}</p>

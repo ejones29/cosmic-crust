@@ -15,11 +15,11 @@
 
 :root {
   --font: "Bungee", sans-serif;
-  --primary: #0c2a45;
+  --primary: #f2a43c;
   --secondary: #d5532e;
   --accent: #fec45e;
   --highlight: #f2a43c;
-  --background: #f0f0f0ff;
+  --background: #0c2a45;
   --border: #ffffff;
 }
 
@@ -32,6 +32,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: var(--background);
+  color: var(--border);
 }
 
 h1 {
@@ -57,25 +58,33 @@ textarea {
   outline: none;
 }
 
+
 nav {
   width: 100%;
-  display: grid;
+  display: flex;
   border-bottom: 1px solid #ccc;
-  grid-template-areas: ". logo logo logo cart";
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.nav-logo {
+  width: 100%;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
   width: 100%;
-  height: 110px;
+  height: 80px;
   background-position: left;
   background-repeat: no-repeat;
-  /* content: url("/cosmic-crust.svg"); */
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  content: url("/public/cosmic-crust-logo.svg");
 }
 
-nav .logo {
+/* nav .logo {
   width: inherit;
   grid-area: logo;
 }
@@ -85,10 +94,10 @@ nav > a {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .nav-cart {
-  grid-area: cart;
+  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,10 +168,6 @@ form div {
 form > div {
   padding: 15px;
   width: 100%;
-}
-
-form > div:first-child {
-  border-right: 1px solid #ccc;
 }
 
 form > div > div > label {
@@ -256,7 +261,17 @@ button,
 .pizza-of-the-day {
   border-top: 1px solid var(--border);
   margin-top: 50px;
+  padding-top: 50px;
   width: 100%;
+}
+
+.pizza-of-the-day-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
 }
 
 .pizza-of-the-day > div {
@@ -287,6 +302,7 @@ button,
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 50px;
+  padding-top: 50px;
 }
 
 .cart {
@@ -364,7 +380,7 @@ table {
 }
 
 thead tr {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: #ffffff;
   text-align: left;
 }
@@ -380,7 +396,7 @@ tbody tr {
 }
 
 tbody tr:nth-of-type(even) {
-  background-color: #f6fef0;
+  background-color: var(--secondary);
 }
 
 tbody tr:last-of-type {

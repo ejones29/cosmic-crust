@@ -6,9 +6,12 @@ export default function Header() {
   const [cart] = useContext(CartContext);
   return (
     <nav>
-      <Link to={"/"}>
-        <h1 className="logo">Cosmic Crust Pizza</h1>
-      </Link>
+      <div className="nav-logo">
+        <Link to={"/"}>
+          <span className="logo">🍕</span>
+          <h1>Cosmic Crust Pizza</h1>
+        </Link>
+      </div>
       <div className="nav-cart">
         🛒<span className="nav-cart-number">{cart.length}</span>
       </div>
