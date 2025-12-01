@@ -15,5 +15,20 @@ export default defineConfig({
       },
     },
   },
-  plugins: [TanStackRouterVite(), react()],
+  plugins: [
+    TanStackRouterVite(),
+    react({
+      // See https://react.dev/learn/react-compiler/installation#vite for more info
+      babel: {
+        plugins: [
+          [
+            "babel-plugin-react-compiler",
+            {
+              target: "19",
+            },
+          ],
+        ],
+      },
+    }),
+  ],
 });
