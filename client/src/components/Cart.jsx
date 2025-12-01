@@ -1,7 +1,4 @@
-const intl = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
+import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter";
 
 export default function Cart({ cart, checkout }) {
   let total = 0;
@@ -17,11 +14,13 @@ export default function Cart({ cart, checkout }) {
           <li key={index}>
             <span className="size">{item.size}</span> –
             <span className="type">{item.pizza.name}</span> –
-            <span className="price">{item.price}</span>
+            <span className="price">
+              {useCurrencyFormatter(item.pizza.sizes[item.size])}
+            </span>
           </li>
         ))}
       </ul>
-      <p>Total: {intl.format(total)}</p>
+      <p>Total: {useCurrencyFormatter(total)}</p>
       <button onClick={checkout}>Checkout</button>
     </div>
   );

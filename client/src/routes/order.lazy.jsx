@@ -3,14 +3,10 @@ import { createLazyFileRoute } from "@tanstack/react-router";
 import Pizza from "../components/Pizza";
 import Cart from "../components/Cart";
 import { CartContext } from "../contexts";
+import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter";
 
 export const Route = createLazyFileRoute("/order")({
   component: Order,
-});
-
-const intl = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
 });
 
 // export default function Order() { // Previous export before implementing TanStack Router lazy route
@@ -39,9 +35,7 @@ function Order() {
   let price, selectedPizza;
   if (!loading) {
     selectedPizza = pizzaTypes.find((pizza) => pizzaType === pizza.id);
-    price = intl.format(
-      selectedPizza.sizes ? selectedPizza.sizes[pizzaSize] : "",
-    );
+    price = useCurrencyFormatter(selectedPizza.sizes[pizzaSize]);
   }
 
   useEffect(() => {

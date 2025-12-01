@@ -5,14 +5,10 @@ import getPastOrders from "../api/getPastOrders";
 import getPastOrder from "../api/getPastOrder";
 import Modal from "../components/Modal";
 import ErrorBoundary from "../components/ErrorBoundary";
+import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter";
 
 export const Route = createLazyFileRoute("/past")({
   component: ErrorBoundaryWrappedPastOrderRoutes,
-});
-
-const intl = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
 });
 
 function ErrorBoundaryWrappedPastOrderRoutes() {
@@ -110,8 +106,8 @@ function PastOrdersRoute({ page, setPage, loadedPromise }) {
                     <td>{pizza.name}</td>
                     <td>{pizza.size}</td>
                     <td>{pizza.quantity}</td>
-                    <td>{intl.format(pizza.price)}</td>
-                    <td>{intl.format(pizza.total)}</td>
+                    <td>{useCurrencyFormatter(pizza.price)}</td>
+                    <td>{useCurrencyFormatter(pizza.total)}</td>
                   </tr>
                 ))}
               </tbody>
