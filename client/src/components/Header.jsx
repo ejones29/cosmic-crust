@@ -7,15 +7,18 @@ export default function Header() {
   return (
     <nav>
       <div className="nav-logo">
-        <Link to={"/"}>
-          <span className="logo">🍕</span>
-          <h1 className="text-melted-cheese-orange font-bungee text-3xl">
-            Cosmic Crust Pizza
-          </h1>
-        </Link>
+        <div className="flex items-center justify-between">
+          <Link to={"/"} className="flex items-center justify-center">
+            <span className="mr-4 text-3xl">🛸</span>
+            <h1 className="text-melted-cheese-orange font-bungee px-2.5 text-3xl">
+              Cosmic Crust Pizza
+            </h1>
+            <span className="ml-4 text-3xl">🛸</span>
+          </Link>
+        </div>
       </div>
       <div className="nav-cart">
-        🛒<span className="nav-cart-number">{cart.length}</span>
+        🍕<span className="nav-cart-number">{cart.length}</span>
       </div>
     </nav>
   );

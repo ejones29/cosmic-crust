@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @font-face {
   font-family: "Bungee";
   src: url("./Bungee-Regular.ttf");
@@ -137,7 +138,6 @@ nav {
 
 .nav-logo {
   width: 100%;
-  margin-left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,22 +146,10 @@ nav {
 .logo {
   width: 100%;
   height: 80px;
-  background-position: left;
-  background-repeat: no-repeat;
-  content: url("./cosmic-crust-logo.svg");
+  /* background-position: left;
+  background-repeat: no-repeat; */
+  /* content: url("./cosmic-crust-logo.svg"); */
 }
-
-/* nav .logo {
-  width: inherit;
-  grid-area: logo;
-}
-
-nav > a {
-  grid-area: logo;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 
 .nav-cart {
   margin-left: auto;
