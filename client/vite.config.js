@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   server: {
@@ -16,6 +17,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    tailwindcss(),
     TanStackRouterVite(),
     react({
       // See https://react.dev/learn/react-compiler/installation#vite for more info

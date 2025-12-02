@@ -1,6 +1,16 @@
+@import "tailwindcss";
 @font-face {
   font-family: "Bungee";
-  src: url("/public/Bungee-Regular.ttf");
+  src: url("./Bungee-Regular.ttf");
+}
+
+@theme {
+  --color-deep-space-navy: #0c2a45;
+  --color-golden-crust-yellow: #fec45e;
+  --color-cosmic-red-pepperoni: #d5532e;
+  --color-melted-cheese-orange: #f2a43c;
+  --color-dark-crust-gray: #1a1a1a;
+  --color-space-dust-white: #ffffff;
 }
 
 /* 
@@ -29,14 +39,72 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
   font-family: Arial, sans-serif;
-  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* background-color: var(--background); */
   color: var(--border);
+  position: relative;
+}
+
+/* Static stars layer */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(2px 2px at 80% 20%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 50% 60%, #fff, transparent),
+    radial-gradient(1px 1px at 10% 80%, #fff, transparent),
+    radial-gradient(1.3px 1.3px at 90% 90%, #fff, transparent);
+  background-size: cover;
+}
+
+/* Twinkling stars layer */
+.twinkling {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(1px 1px at 25% 40%, #fff, transparent),
+    radial-gradient(1.2px 1.2px at 60% 70%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 75% 25%, #fff, transparent),
+    radial-gradient(1px 1px at 30% 90%, #fff, transparent),
+    radial-gradient(1.3px 1.3px at 45% 10%, #fff, transparent);
+  background-size: cover;
+  animation:
+    twinkle 1.5s infinite ease-in-out alternate,
+    moveStars 30s linear infinite;
+  opacity: 0.65; /* Soft/light twinkle */
+}
+
+/* Fade animation */
+@keyframes twinkle {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes moveStars {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px 1000px;
+  }
 }
 
 h1 {
-  color: var(--primary);
+  /* color: var(--primary); */
   font-family: var(--font);
   font-weight: normal;
 }
@@ -57,7 +125,6 @@ textarea {
   border: none;
   outline: none;
 }
-
 
 nav {
   width: 100%;
@@ -81,7 +148,7 @@ nav {
   height: 80px;
   background-position: left;
   background-repeat: no-repeat;
-  content: url("/public/cosmic-crust-logo.svg");
+  content: url("./cosmic-crust-logo.svg");
 }
 
 /* nav .logo {
@@ -489,4 +556,191 @@ td img {
   margin: 50px;
   font-weight: normal;
   font-size: 30px;
+}
+
+// Stars Background Component Styles
+.stars-background-root {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+}
+/* Sky + clouds */
+.stars-sky {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 25, 0.95) 0%,
+    rgba(2, 6, 23, 0.95) 60%,
+    rgba(0, 0, 12, 1) 100%
+  );
+  transition: background 400ms ease;
+  /* cloud layer */
+  background-image:
+    linear-gradient(180deg, rgba(6, 10, 20, 0.98), rgba(0, 0, 8, 0.98)),
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(255, 255, 255, 0.02) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(255, 255, 255, 0.02) 0%,
+      transparent 20%
+    );
+  mix-blend-mode: normal;
+}
+/* subtle drifting cloud overlay using filter blur and low opacity */
+.stars-sky::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: repeating-linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.02) 0 120px,
+    rgba(255, 255, 255, 0) 120px 240px
+  );
+  filter: blur(14px);
+  opacity: 0.35;
+  animation: cloudsShift 70s linear infinite;
+  transform: translateZ(0);
+}
+@keyframes cloudsShift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-600px, 300px, 0) scale(1.02);
+  }
+}
+/* Star layers - note: the actual star positions are provided inline via box-shadow */
+.stars-layer {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  position: absolute;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+/* Twinkle animations: each layer has a different speed and subtle opacity modulation */
+.stars-far {
+  opacity: 0.65;
+  filter: blur(0.2px);
+  animation: twinkleFar 8s linear infinite;
+}
+.stars-mid {
+  opacity: 0.85;
+  filter: blur(0.15px);
+  animation: twinkleMid 5.2s linear infinite;
+}
+.stars-near {
+  opacity: 1;
+  filter: blur(0.05px);
+  animation: twinkleNear 2.8s linear infinite;
+}
+@keyframes twinkleFar {
+  0% {
+    opacity: 0.55;
+    transform: translateZ(0) scale(1);
+  }
+  50% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+@keyframes twinkleMid {
+  0% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes twinkleNear {
+  0% {
+    opacity: 0.6;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+/* Slight parallax / slow motion to avoid perfectly static look */
+.stars-far {
+  transform-origin: 50% 50%;
+  animation-name: twinkleFar, driftFar;
+  animation-duration: 8s, 180s;
+  animation-iteration-count: infinite, infinite;
+  animation-timing-function: linear, linear;
+}
+.stars-mid {
+  transform-origin: 50% 50%;
+  animation-name: twinkleMid, driftMid;
+  animation-duration: 5.2s, 120s;
+  animation-iteration-count: infinite, infinite;
+  animation-timing-function: linear, linear;
+}
+.stars-near {
+  transform-origin: 50% 50%;
+  animation-name: twinkleNear, driftNear;
+  animation-duration: 2.8s, 60s;
+  animation-iteration-count: infinite, infinite;
+  animation-timing-function: linear, linear;
+}
+
+@keyframes driftFar {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-80px, 60px) scale(1.0005);
+  }
+}
+@keyframes driftMid {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-160px, 120px) scale(1.003);
+  }
+}
+@keyframes driftNear {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-260px, 190px) scale(1.006);
+  }
+}
+
+/* Dark mode + light mode adjustments */
+@media (prefers-color-scheme: light) {
+  .stars-sky {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 18, 35, 0.85) 0%,
+      rgba(40, 45, 70, 0.65) 60%,
+      rgba(90, 110, 140, 1) 100%
+    );
+  }
+  .stars-layer {
+    opacity: 0.9;
+  }
 }

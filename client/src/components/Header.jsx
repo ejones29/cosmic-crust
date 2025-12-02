@@ -9,7 +9,9 @@ export default function Header() {
       <div className="nav-logo">
         <Link to={"/"}>
           <span className="logo">🍕</span>
-          <h1>Cosmic Crust Pizza</h1>
+          <h1 className="text-melted-cheese-orange font-bungee text-3xl">
+            Cosmic Crust Pizza
+          </h1>
         </Link>
       </div>
       <div className="nav-cart">
