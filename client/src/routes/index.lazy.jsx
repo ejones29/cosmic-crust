@@ -8,8 +8,12 @@ function Index() {
   return (
     <div className="index">
       <div className="index-brand">
-        <h1>Cosmic Crust</h1>
-        <p>Where every slice is outta this world.🍕✨</p>
+        <h1 className="text-melted-cheese-orange font-bungee text-3xl">
+          Cosmic Crust
+        </h1>
+        <p className="text-space-dust-white text-xl">
+          Where every slice is outta this world.🍕✨
+        </p>
       </div>
       <ul>
         <li>

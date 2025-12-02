@@ -16,7 +16,7 @@ function RootComponent() {
   return (
     <>
       <CartContext.Provider value={cartHook}>
-        <StarsBackground starCount={30000} />
+        <StarsBackground starCount={10000} />
         <div>
           <Header />
           <Outlet />
