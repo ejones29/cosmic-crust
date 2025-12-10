@@ -38,15 +38,23 @@ This application is still under active construction as the Cosmic Crust fleet ex
 
 ## 🛸 Getting Started
 
-Clone the repository and fire up both the client and server to explore the early cosmos:
+Clone the repository and fire up both the client and server (in separate terminal tabs) to explore the early cosmos:
 
 ```bash
 git clone https://github.com/your-username/cosmic-crust.git
 cd cosmic-crust
+```
+
+## Client (Frontend React app)
+```bash
 cd client
 npm install
 npm run dev
+```
 
-cd api
+## Server (Backend Fastify server (including API routes))
+```bash
+cd server
 npm install
 npm run dev
+```
