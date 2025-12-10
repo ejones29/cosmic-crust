@@ -26,11 +26,11 @@ Powering the Cosmic Crust command center:
 ## 🌠 Features (In Progress)
 This application is still under active construction as the Cosmic Crust fleet expands its reach. Expect frequent updates, improvements, and new cosmic features such as:
 
-- Dynamic menu browsing  
-- Order creation and tracking  
-- Planet-specific topping variants  
-- Admin dashboard for galactic pizza management  
+- Migrate styling to Tailwind CSS
+- Improve responsivness of page layouts    
+- Planet-specific topping variants
 - More animations, polish, and interstellar flair  
+- Admin dashboard for galactic pizza management  
 
 *(Like a pizza in zero-gravity — things are still floating into place!)*
 
