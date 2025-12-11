@@ -5,29 +5,36 @@ type Variant = "primary" | "secondary" | "ghost";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   variant = "primary",
-  className,
+  leftIcon,
+  rightIcon,
   children,
+  className,
   ...props
 }) => {
   const base =
-    "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cosmic-gold focus-visible:ring-offset-cosmic-space";
+    "inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-sans font-medium text-sm transition-all active:scale-[0.98]";
 
   const variants: Record<Variant, string> = {
     primary:
-      "bg-cosmic-orange text-cosmic-space hover:bg-[#ff8c3f] shadow-cosmic-soft",
+      "bg-cosmic-orange text-white shadow-card hover:bg-[#ff893d] focus-visible:ring-2 ring-cosmic-gold",
     secondary:
-      "bg-transparent border border-cosmic-beige text-cosmic-beige hover:bg-white/5",
+      "bg-cosmic-beige text-cosmic-space shadow-card hover:bg-[#f9dcc9] focus-visible:ring-2 ring-cosmic-gold",
     ghost:
-      "bg-transparent text-cosmic-beige/80 hover:text-white hover:bg-white/5",
+      "bg-transparent text-cosmic-space hover:bg-cosmic-beige/20 focus-visible:ring-2 ring-cosmic-gold",
   };
 
   return (
-    <button className={clsx(base, variants[variant], className)} {...props}>
+    <button {...props} className={clsx(base, variants[variant], className)}>
+      {leftIcon && <span>{leftIcon}</span>}
       {children}
+      {rightIcon && <span>{rightIcon}</span>}
     </button>
   );
 };
+export default Button;

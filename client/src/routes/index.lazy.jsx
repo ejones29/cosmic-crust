@@ -1,43 +1,60 @@
 import { createLazyFileRoute, Link } from "@tanstack/react-router";
-import { Button } from "../components/Button.tsx";
 import Hero from "../components/Hero.tsx";
+import Container from "../components/Container.tsx";
+import SectionHeader from "../components/SectionHeader.tsx";
+import CardCategory from "../components/CardCategory.tsx";
 import PizzaOfTheDay from "../components/PizzaOfTheDay.jsx";
+import CardPizza from "../components/CardPizza.tsx";
+import BottomNav from "../components/BottomNav.tsx";
+import supernova from "./../public//hero-pizza.png";
 export const Route = createLazyFileRoute("/")({
   component: Index,
 });
 
 function Index() {
   return (
-    <div className="bg-cosmic-beige flex min-h-screen flex-col font-sans">
+    <>
       <Hero />
-      <PizzaOfTheDay />
-    </div>
-    // <div className="index">
-    //   <div className="index-brand">
-    //     <h1 className="text-melted-cheese-orange font-bungee text-3xl">
-    //       Cosmic Crust
-    //     </h1>
-    //     <p className="text-space-dust-white text-xl">
-    //       Where every slice is outta this world.🍕✨
-    //     </p>
-    //   </div>
-    //   <ul>
-    //     <li>
-    //       <Button variant="primary">
-    //         <Link to="/order">Order Now</Link>
-    //       </Button>
-    //     </li>
-    //     <li>
-    //       <Button variant="secondary">
-    //         <Link to="/past">Past Orders</Link>
-    //       </Button>
-    //     </li>
-    //     <li>
-    //       <Button variant="secondary">
-    //         <Link to="/contact">Contact</Link>
-    //       </Button>
-    //     </li>
-    //   </ul>
-    // </div>
+      <Container>
+        <PizzaOfTheDay />
+      </Container>
+      <Container>
+        <SectionHeader title="Explore Our Menu" />
+
+        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+          <CardCategory emoji="🍕" label="Pizza" />
+          <CardCategory emoji="🥗" label="Salads" />
+          <CardCategory emoji="🥤" label="Drinks" />
+          <CardCategory emoji="🍪" label="Desserts" />
+        </div>
+      </Container>
+      <Container>
+        <SectionHeader title="Popular Pizzas" />
+
+        <div className="mt-4 grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+          <CardPizza
+            name="Supernova Supreme"
+            description="Explosive flavors on an orbiting crust."
+            price="$15.99"
+            image={supernova}
+          />
+
+          <CardPizza
+            name="Meteor Margherita"
+            description="Classic margherita with meteor-roasted tomatoes."
+            price="$13.49"
+            image={supernova}
+          />
+
+          <CardPizza
+            name="Galactic Veggie"
+            description="A constellation of fresh veggies and cosmic herbs."
+            price="$14.79"
+            image={supernova}
+          />
+        </div>
+      </Container>
+      <BottomNav />
+    </>
   );
 }

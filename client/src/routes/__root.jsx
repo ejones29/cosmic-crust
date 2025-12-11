@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import StarsBackground from "../components/StarsBackground";
 import Header from "../components/Header.tsx";
 
 import { CartContext } from "../contexts.tsx";
@@ -16,8 +15,7 @@ function RootComponent() {
   return (
     <>
       <CartContext.Provider value={cartHook}>
-        <StarsBackground starCount={10000} />
-        <div>
+        <div className="bg-cosmic-beige min-h-screen pb-24 font-sans md:pb-32">
           <Header />
           <Outlet />
         </div>
