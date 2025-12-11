@@ -4,8 +4,8 @@ import { createLazyFileRoute } from "@tanstack/react-router";
 import getPastOrders from "../api/getPastOrders";
 import getPastOrder from "../api/getPastOrder";
 import Modal from "../components/Modal";
-import ErrorBoundary from "../components/ErrorBoundary";
-import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter";
+import ErrorBoundary from "../components/ErrorBoundary.tsx";
+import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter.tsx";
 
 export const Route = createLazyFileRoute("/past")({
   component: ErrorBoundaryWrappedPastOrderRoutes,

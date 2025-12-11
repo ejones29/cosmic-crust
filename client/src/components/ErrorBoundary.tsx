@@ -1,13 +1,20 @@
-// mostly code from reactjs.org/docs/error-boundaries.html
 import { Component } from "react";
 import { Link } from "@tanstack/react-router";
 
-class ErrorBoundary extends Component {
-  state = { hasError: false };
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  state: ErrorBoundaryState = { hasError: false };
   static getDerivedStateFromError() {
     return { hasError: true };
   }
-  componentDidCatch(error, info) {
+  componentDidCatch(error: any, info: any) {
     console.error("ErrorBoundary caught an error", error, info);
   }
   render() {

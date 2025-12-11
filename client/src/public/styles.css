@@ -1,11 +1,23 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Bungee";
-  src: url("./Bungee-Regular.ttf");
+  font-family: "Rubik";
+  src: url("./Rubik-Medium.ttf");
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("./SpaceGrotesk-Regular.ttf");
 }
 
 @theme {
+  --color-cosmic-space: #0f0d17;
+  --color-cosmic-gold: #ffd56b;
+  --color-cosmic-plum: #4a2c6f;
+  --color-cosmic-space: #0f0d17;
+  --color-cosmic-beige: #f5e9d7;
+  --color-cosmic-card: #f7e2bf;
+  --color-cosmic-orange: #ff7a29;
   --color-deep-space-navy: #0c2a45;
   --color-golden-crust-yellow: #fec45e;
   --color-cosmic-red-pepperoni: #d5532e;
@@ -14,43 +26,55 @@
   --color-space-dust-white: #ffffff;
 }
 
-/* 
-  Color Palette:
-  Deep Space Navy Blue: #0C2A45
-  Golden Crust Yellow: #FEC45E
-  Cosmic Red Pepperoni: #D5532E
-  Melted Cheese Orange: #F2A43C
-  Dark Crust Gray: #1A1A1A
-  Space Dust White: #FFFFFF
-*/
-
 :root {
-  --font: "Bungee", sans-serif;
+  --font: "Rubik", sans-serif;
+  --accent-font: "SpaceGrotesk", sans-serif;
   --primary: #f2a43c;
   --secondary: #d5532e;
   --accent: #fec45e;
   --highlight: #f2a43c;
   --background: #0c2a45;
   --border: #ffffff;
+  --cosmic-plum: #4a2c6f;
+  --cosmic-orange: #ff7a29;
+  --cosmic-gold: #ffd56b;
+  --cosmic-space: #0f0d17;
+  --cosmic-beige: #f5e9d7;
+  --cosmic-card: #f7e2bf;
 }
 
 * {
-  /* margin: 0; */
-  padding: 0;
   box-sizing: border-box;
 }
 
 body,
 html {
-  font-family: Arial, sans-serif;
+  font-family: var(--font), sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  /* background-color: var(--background); */
+  overflow-x: hidden;
   color: var(--border);
   position: relative;
+}
+
+.bg-cosmic-grain {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 0
+  );
+  background-size: 3px 3px;
+}
+
+.cosmic-gradient {
+  background: linear-gradient(
+    to bottom,
+    var(--cosmic-space) 0%,
+    #2c1748 40%,
+    rgba(255, 122, 41, 0.9) 100%
+  );
 }
 
 /* Static stars layer */
@@ -110,6 +134,29 @@ h1 {
   font-weight: normal;
 }
 
+h2 {
+  font-family: var(--accent-font);
+  font-size: 36px;
+  line-height: auto;
+}
+
+h2::after {
+  content: "";
+  display: inline-block;
+  margin-left: 25px;
+  width: 150px;
+  height: 30px;
+  background: conic-gradient(
+    transparent 90deg,
+    var(--primary) 90deg 180deg,
+    transparent 180deg 270deg,
+    var(--primary) 270deg
+  );
+  background-repeat: repeat;
+  background-size: 30px 30px;
+  background-position: top left;
+}
+
 ul,
 ol {
   list-style: none;
@@ -120,35 +167,10 @@ a {
   color: inherit;
 }
 
-button,
 input,
 textarea {
   border: none;
   outline: none;
-}
-
-nav {
-  width: 100%;
-  display: flex;
-  border-bottom: 1px solid #ccc;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.nav-logo {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  width: 100%;
-  height: 80px;
-  /* background-position: left;
-  background-repeat: no-repeat; */
-  /* content: url("./cosmic-crust-logo.svg"); */
 }
 
 .nav-cart {
@@ -172,32 +194,6 @@ nav {
   height: 20px;
   font-size: 12px;
   border-radius: 50%;
-}
-
-h2 {
-  font-family: var(--font);
-  font-size: 40px;
-  line-height: auto;
-  font-weight: 400;
-  color: var(--primary);
-  text-align: center;
-}
-
-h2::after {
-  content: "";
-  display: inline-block;
-  margin-left: 25px;
-  width: 150px;
-  height: 30px;
-  background: conic-gradient(
-    transparent 90deg,
-    var(--primary) 90deg 180deg,
-    transparent 180deg 270deg,
-    var(--primary) 270deg
-  );
-  background-repeat: repeat;
-  background-size: 30px 30px;
-  background-position: top left;
 }
 
 .order {
@@ -300,57 +296,6 @@ form > div > div > label {
   justify-content: space-between;
 }
 
-button,
-.index li a {
-  border: 1px solid var(--primary);
-  background-color: transparent;
-  color: var(--primary);
-  font-family: var(--font);
-  font-size: 20px;
-  padding: 5px 15px;
-  border-radius: 5px;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.pizza-of-the-day {
-  border-top: 1px solid var(--border);
-  margin-top: 50px;
-  padding-top: 50px;
-  width: 100%;
-}
-
-.pizza-of-the-day-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
-}
-
-.pizza-of-the-day > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pizza-of-the-day > h2 {
-  text-align: center;
-}
-
-.pizza-of-the-day-image {
-  max-width: 200px;
-  border-radius: 5px;
-  border: 1px solid var(--border);
-}
-
-.pizza-of-the-day-info {
-  margin-right: 30px;
-  line-height: 2;
-  text-align: center;
-}
-
 .order-page {
   max-width: 1300px;
   margin: 0 auto;
@@ -404,9 +349,10 @@ button,
 
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
-.index li,
+/* .index li,
 .index li a {
   width: 100%;
   max-width: 250px;
@@ -415,7 +361,7 @@ button,
 
 .index li a {
   margin-bottom: 10px;
-}
+} */
 
 .past-orders {
   min-height: 650px;

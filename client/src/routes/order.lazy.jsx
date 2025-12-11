@@ -3,7 +3,7 @@ import { createLazyFileRoute } from "@tanstack/react-router";
 import Pizza from "../components/Pizza";
 import Cart from "../components/Cart";
 import { CartContext } from "../contexts";
-import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter";
+import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter.tsx";
 
 export const Route = createLazyFileRoute("/order")({
   component: Order,

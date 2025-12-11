@@ -3,9 +3,9 @@ import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import StarsBackground from "../components/StarsBackground";
-import Header from "../components/Header";
-import PizzaOfTheDay from "../components/PizzaOfTheDay";
-import { CartContext } from "../contexts";
+import Header from "../components/Header.tsx";
+
+import { CartContext } from "../contexts.tsx";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -20,7 +20,6 @@ function RootComponent() {
         <div>
           <Header />
           <Outlet />
-          <PizzaOfTheDay />
         </div>
       </CartContext.Provider>
       <TanStackRouterDevtools />

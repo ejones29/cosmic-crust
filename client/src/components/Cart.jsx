@@ -1,4 +1,4 @@
-import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter";
+import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter.tsx";
 
 export default function Cart({ cart, checkout }) {
   let total = 0;
