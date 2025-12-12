@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-sans font-medium text-sm transition-all active:scale-[0.98]";
+    "inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-sans font-medium text-sm transition-all active:scale-[0.98] hover:cursor-pointer focus-visible:outline-none";
 
   const variants: Record<Variant, string> = {
     primary:

@@ -4,7 +4,7 @@ import Container from "../components/Container.tsx";
 import Section from "../components/Section.tsx";
 import SectionHeader from "../components/SectionHeader.tsx";
 import CardCategory from "../components/CardCategory.tsx";
-import PizzaOfTheDay from "../components/PizzaOfTheDay.jsx";
+import PizzaOfTheDay from "../components/PizzaOfTheDay.tsx";
 import CardPizza from "../components/CardPizza.tsx";
 import BottomNav from "../components/BottomNav.tsx";
 import supernova from "./../public//hero-pizza.png";
@@ -24,7 +24,6 @@ function Index() {
 
       <Container>
         <Section>
-          <SectionHeader title="Pizza of the Day" />
           <PizzaOfTheDay />
         </Section>
 

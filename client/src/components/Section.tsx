@@ -1,4 +1,6 @@
 const Section = ({ children }: { children: React.ReactNode }) => (
-  <div className="mx-auto mb-4 w-full md:mb-10">{children}</div>
+  <section className="mx-auto mb-4 w-full max-w-6xl md:mb-10">
+    {children}
+  </section>
 );
 export default Section;

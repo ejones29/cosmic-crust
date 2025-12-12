@@ -6,7 +6,7 @@ import stardust from "../public/star-dust-texture.png";
 export const Header: React.FC = () => {
   const [cart] = useContext(CartContext);
   return (
-    <header className="bg-cosmic-space relative overflow-hidden text-white">
+    <header className="bg-cosmic-midnight-plum relative overflow-hidden text-white">
       {/* Stardust Layer (slow) */}
       <div
         className="animate-stardust pointer-events-none absolute inset-0 opacity-20"
@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
         <Link to={"/"} className="flex items-center justify-center">
           <Logo className="h-24 w-24" />
         </Link>
-        <nav className="text-cosmic-beige/80 hidden items-center gap-6 text-sm md:flex">
+        <nav className="hidden items-center gap-6 text-sm text-white md:flex">
           <Link to="/menu" className="nav-link">
             Menu
           </Link>

@@ -11,12 +11,21 @@
 }
 
 @theme {
-  --color-cosmic-gold: #ffd56b;
-  --color-cosmic-plum: #4a2c6f;
-  --color-cosmic-space: #0f0d17;
-  --color-cosmic-beige: #f5e9d7;
-  --color-cosmic-sand: #f7e2bf;
-  --color-cosmic-orange: #bb4d00;
+  /* PRIMARY BRAND COLORS */
+  --color-cosmic-orange: #ba5a26; /* Hero background / brand orange */
+  --color-cosmic-gold: #f5c978; /* Highlights + accents */
+  --color-cosmic-midnight-plum: #251636; /* Header, footer, nav, cosmic UI foundation */
+  /* --color-cosmic-plum: #2f1b44; */
+  --color-cosmic-space: #0f0d17; /* Hero text / brand black */
+
+  /* NEUTRALS */
+  --color-cosmic-beige: #f3e6d4; /* Warm page background (mockup-accurate) */
+  --color-cosmic-sand: #f2d9bd; /* Cards, secondary surfaces */
+
+  /* SUPPORT TONES (Brand Depth) */
+  --color-cosmic-rose: #eec5aa; /* Soft supporting hue */
+  --color-cosmic-shadow: #9a6d52; /* Warm shadow tint */
+  --color-cosmic-crust: #a45d3c; /* Darker orange for gradients / depth */
 
   --font-family-display: "Playfair Display", serif;
   --font-family-sans: "Inter", system-ui, sans-serif;
@@ -36,7 +45,8 @@
 
   --animate-stardust-slow: stardust-slow 18s linear infinite alternate;
   --animate-stardust-fast: stardust-fast 14s linear infinite alternate;
-  --spacing-1_5: 0.375rem;
+  --animate-fade-up: fade-up 0.45s ease-out forwards;
+  --animate-fade-up-slow: fade-up 1s ease-out forwards;
   --spacing-4_5: 1.125rem;
   --spacing-18: 4.5rem;
 }
@@ -59,6 +69,17 @@
   }
 }
 
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
 :root {
   --font: "Inter", sans-serif;
   --display-font: "Playfair Display", serif;
@@ -69,6 +90,7 @@
   --highlight: #f2a43c;
   --background: #0c2a45;
   --border: #ffffff;
+  --white: #ffffff;
 }
 
 * {
@@ -91,6 +113,7 @@ html {
   font-family: var(--display-font);
   font-size: 32px;
   line-height: 1.15;
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
@@ -158,7 +181,7 @@ p {
   font-family: var(--font);
   font-size: 16px;
   line-height: 1.5;
-  /* margin: 0; */
+  /* color: var(--border); */
 }
 
 ul,
@@ -200,12 +223,12 @@ textarea {
   border-radius: 50%;
 }
 
-.order {
+/* .order {
   width: 100%;
   margin-left: 5%;
-}
+} */
 
-form div {
+/* form div {
   margin: 10px 0;
   text-align: center;
 }
@@ -260,7 +283,7 @@ form input + label {
 
 form input:checked + label {
   color: #333;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 form > div > div > label {
@@ -268,9 +291,9 @@ form > div > div > label {
   font-size: 20px;
   color: var(--secondary);
   margin-bottom: 10px;
-}
+} */
 
-.pizza {
+/* .pizza {
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -292,11 +315,10 @@ form > div > div > label {
 
 .pizza p {
   margin-bottom: 5px;
-}
+} */
 
-.order form {
+/* .order form {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
 }
 
@@ -332,7 +354,7 @@ form > div > div > label {
   gap: 30px;
   max-width: 700px;
   margin: 120px auto;
-}
+} */
 
 /* todo: migrate to tailwind later */
 .past-orders {
@@ -354,7 +376,7 @@ table {
 
 thead tr {
   background-color: var(--primary);
-  color: #ffffff;
+  color: var(--white);
   text-align: left;
 }
 

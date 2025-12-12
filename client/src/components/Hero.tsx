@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
     <section className="bg-cosmic-orange mb-5 px-6 pt-6 pb-10 md:mb-10 md:pt-12 md:pb-16">
       <div className="mx-auto max-w-6xl md:flex md:items-center md:gap-12">
         <div className="md:flex-1">
-          <h1 className="text-cosmic-sand mb-4 text-5xl leading-tight md:text-6xl">
+          <h1 className="text-cosmic-sand animate-fade-up mb-4 text-5xl leading-tight md:text-6xl">
             Pizza That’s Out of This World
           </h1>
 
@@ -16,7 +16,10 @@ const Hero: React.FC = () => {
             Delivered at warp speed from our cosmic kitchen to your orbit.
           </p>
 
-          <Button variant="secondary" className="w-full max-w-sm">
+          <Button
+            variant="secondary"
+            className="w-full max-w-xs transition-shadow duration-300 hover:shadow-[0_0_18px_rgba(245,201,120,0.45)]"
+          >
             <Link to="/order">Order Now</Link>
           </Button>
         </div>

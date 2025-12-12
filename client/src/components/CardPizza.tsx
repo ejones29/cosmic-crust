@@ -23,7 +23,7 @@ const CardPizza: React.FC<CardPizzaProps> = ({
     <h3 className="font-display text-cosmic-space text-lg">{name}</h3>
     <p className="text-cosmic-space/70 font-sans text-sm">{description}</p>
 
-    <p className="text-cosmic-plum mt-2 font-sans text-sm font-semibold">
+    <p className="text-cosmic-midnight-plum mt-2 font-sans text-sm font-semibold">
       {price}
     </p>
   </article>
