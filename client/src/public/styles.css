@@ -47,6 +47,7 @@
   --animate-stardust-fast: stardust-fast 14s linear infinite alternate;
   --animate-fade-up: fade-up 0.45s ease-out forwards;
   --animate-fade-up-slow: fade-up 1s ease-out forwards;
+  --animate-cart-remove: cartRemove 0.25s ease-out forwards;
   --spacing-4_5: 1.125rem;
   --spacing-18: 4.5rem;
 }
@@ -77,6 +78,17 @@
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+@keyframes cartRemove {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
   }
 }
 

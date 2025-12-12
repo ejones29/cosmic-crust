@@ -1,7 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { createLazyFileRoute } from "@tanstack/react-router";
 import Container from "../components/Container";
-import Pizza from "../components/Pizza";
 import Cart from "../components/Cart";
 import { CartContext } from "../contexts";
 import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter.tsx";
@@ -159,7 +158,7 @@ function Order() {
         {/* ------------------------------ */}
         {!loading && (
           <div className="bg-cosmic-sand rounded-card shadow-card p-6 md:p-10">
-            <Cart cart={cart} checkout={checkout} />
+            <Cart cart={cart} setCart={setCart} checkout={checkout} />
           </div>
         )}
       </div>

@@ -1,10 +1,37 @@
+import { useState } from "react";
 import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter.tsx";
 
-export default function Cart({ cart, checkout }) {
+type CartItem = {
+  pizza: { name: string; image: string; sizes: { [key: string]: number } };
+  size: string;
+};
+
+export default function Cart({
+  cart,
+  setCart,
+  checkout,
+}: {
+  cart: CartItem[];
+  setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
+  checkout: () => void;
+}) {
+  const [removingIndex, setRemovingIndex] = useState<number | null>(null);
+
   let total = 0;
   for (let i = 0; i < cart.length; i++) {
     const current = cart[i];
     total += current.pizza.sizes[current.size];
+  }
+
+  function removeItem(index: number): void {
+    setRemovingIndex(index);
+
+    setTimeout(() => {
+      const copy = [...cart];
+      copy.splice(index, 1);
+      setCart(copy);
+      setRemovingIndex(null);
+    }, 250); // sync with animation
   }
 
   const hasItems = cart.length > 0;
@@ -24,22 +51,44 @@ export default function Cart({ cart, checkout }) {
       {/* Cart Items */}
       {hasItems && (
         <ul className="rounded-card shadow-card divide-y divide-[#e8d8c4] bg-white">
-          {cart.map((item, index) => (
+          {cart.map((item: CartItem, index: number) => (
             <li
               key={index}
-              className="flex items-center justify-between p-4 md:p-5"
+              className={`flex items-center justify-between gap-4 p-4 md:p-5 ${removingIndex === index ? "animate-cart-remove" : ""} `}
             >
-              <div className="space-y-1">
-                <p className="text-cosmic-space text-sm font-semibold">
-                  {item.pizza.name}{" "}
-                  <span className="text-cosmic-space/70 text-xs">
-                    ({item.size})
-                  </span>
-                </p>
-                <p className="text-cosmic-space/70 text-sm">
-                  {useCurrencyFormatter(item.pizza.sizes[item.size])}
-                </p>
+              {/* Left section: image + details */}
+              <div className="flex items-center gap-4">
+                {/* Thumbnail */}
+                <div className="rounded-card shadow-card h-14 w-14 overflow-hidden">
+                  <img
+                    src={item.pizza.image}
+                    alt={item.pizza.name}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+
+                {/* Text */}
+                <div className="space-y-1">
+                  <p className="text-cosmic-space text-sm font-semibold">
+                    {item.pizza.name}{" "}
+                    <span className="text-cosmic-space/70 text-xs">
+                      ({item.size})
+                    </span>
+                  </p>
+
+                  <p className="text-cosmic-space/70 text-sm">
+                    {useCurrencyFormatter(item.pizza.sizes[item.size])}
+                  </p>
+                </div>
               </div>
+
+              {/* Remove button */}
+              <button
+                onClick={() => removeItem(index)}
+                className="text-cosmic-midnight-plum hover:text-cosmic-orange text-xs underline transition"
+              >
+                Remove
+              </button>
             </li>
           ))}
         </ul>
