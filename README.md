@@ -1,38 +1,64 @@
 # 🌌 **Cosmic Crust** – A Space-Age Pizza Experience  
-*Where every slice is out of this world!* 🍕✨
+*A premium UI/UX + full-stack portfolio project built for warp-speed cravings.* 🍕✨
 
-Welcome to **Cosmic Crust**, a fictional intergalactic pizza company brought to life as a full-stack portfolio project. This application is currently a **work in progress** as new features, planets, and toppings continue to be discovered. 🪐
+**Cosmic Crust** is a fictional intergalactic pizza brand brought to life through a modern, fully custom React application. The project blends **high-end product design**, **cinematic visuals**, and a **modular, scalable frontend architecture** to create a restaurant-ordering experience that feels truly *out of this world*.
 
----
+This repo includes a fully defined **brand design system**, a **cosmic visual language**, custom **animated UI elements**, and a strong emphasis on **modern frontend engineering workflows**.
 
-## 🚀 Tech Stack
-
-### **Frontend (Client-Side)**
-Built for speed, modularity, and a smooth developer experience:
-
-- **React** – Component-based UI that keeps things clean and reusable.  
-- **Vite** – Lightning-fast builds and dev server to keep the mission moving. ⚡  
-- **TanStack Router** – Type-safe client-side routing across the pizza-verse.  
-- **TanStack Query** – Data fetching, caching, and server state management that feels like magic. ✨  
-
-### **Backend (Server-Side)**
-Powering the Cosmic Crust command center:
-
-- **Fastify** – A speedy and efficient Node.js framework for building APIs at warp speed.  
-- **SQLite** – A lightweight and file-based database, perfect for storing planetary pizza data. 🧠  
+The project is actively evolving as new features, galaxies, and toppings are discovered. 🪐
 
 ---
 
-## 🌠 Features (In Progress)
-This application is still under active construction as the Cosmic Crust fleet expands its reach. Expect frequent updates, improvements, and new cosmic features such as:
+# 🚀 Tech Stack
 
-- Migrate styling to Tailwind CSS
-- Improve responsivness of page layouts    
-- Planet-specific topping variants
-- More animations, polish, and interstellar flair  
-- Admin dashboard for galactic pizza management  
+## **Frontend**
+Designed for speed, composability, and delightful user experience:
 
-*(Like a pizza in zero-gravity — things are still floating into place!)*
+- **React + TypeScript** – Component-driven UI built for scalability  
+- **Vite** – Ultra-fast bundling and dev server ⚡  
+- **Tailwind CSS (v4)** – Utility-first styling powered by a custom cosmic design system  
+- **TanStack Router** – Type-safe routing with zero runtime surprises  
+- **TanStack Query** – Server state, caching, mutations, and async data management  
+- **Custom Design System**  
+  - Cosmic brand palette (plum, orange, gold, sand, beige neutrals)  
+  - Cinematic cosmic backgrounds (1024×1024 WEBP textures)  
+  - Animated stardust layers + parallax hero elements  
+  - Responsive layout primitives & reusable UI components  
+
+## **Backend**
+Powering the Cosmic Crust Command Center:
+
+- **Fastify** – Lightweight, fast Node.js backend for API routes  
+- **SQLite** – File-based persistence for pizzas, toppings, and orders  
+- **REST API Architecture** – Simple, modular, and easy to extend  
+
+---
+
+# 🌠 Current Features
+
+This project is in active development. Recent enhancements include:
+
+### ⭐ **Branding & UI/UX**
+- Fully developed cosmic brand identity (typography, color tokens, radii, shadows)  
+- Cinematic Hero section with parallax pizza, cosmic glow, and drifting stardust  
+- Tailwind-native theme tokens for colors, fonts, radii, shadows, and animations  
+- Mobile-first layout improvements across all pages  
+- Card redesigns, component refinements, and increased visual hierarchy  
+
+### ⭐ **Core Product Features**
+- Fully functional ordering workflow  
+- Dynamic pizza configuration system  
+- Interactive shopping cart with item removal animations  
+- Persistent cart context  
+- Menu components using real food photography assets  
+- Responsive, accessible UI patterns  
+
+### ⭐ **Upcoming Enhancements**
+- Admin dashboard for managing pizzas & orders  
+- Planet-themed topping variants  
+- More parallax, micro-interactions, and scroll-based motion  
+- Desktop UI polishing and refined component hierarchy  
+- Additional cosmic illustrations, overlays, and textures  
 
 ---
 
