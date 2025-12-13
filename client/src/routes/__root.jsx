@@ -3,6 +3,7 @@ import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Header from "../components/Header.tsx";
+import BottomNav from "../components/BottomNav.tsx";
 
 import { CartContext } from "../contexts.tsx";
 
@@ -30,10 +31,11 @@ function RootComponent() {
         <div className="bg-cosmic-beige min-h-screen pb-24 font-sans md:pb-32">
           <Header />
           <Outlet />
+          <BottomNav />
         </div>
       </CartContext.Provider>
-      <TanStackRouterDevtools />
-      <ReactQueryDevtools />
+      {/* <TanStackRouterDevtools /> */}
+      {/* <ReactQueryDevtools /> */}
     </>
   );
 }

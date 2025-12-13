@@ -1,13 +1,17 @@
 import { createLazyFileRoute, Link } from "@tanstack/react-router";
-import Hero from "../components/Hero.tsx";
+
 import Container from "../components/Container.tsx";
 import Section from "../components/Section.tsx";
 import SectionHeader from "../components/SectionHeader.tsx";
+
+import Hero from "../components/Hero.tsx";
 import CardCategory from "../components/CardCategory.tsx";
 import PizzaOfTheDay from "../components/PizzaOfTheDay.tsx";
 import CardPizza from "../components/CardPizza.tsx";
-import BottomNav from "../components/BottomNav.tsx";
-import supernova from "./../public//hero-pizza.png";
+
+import supernova from "./../public/hero-pizza.png";
+
+// react-icons ex: https://react-icons.github.io/react-icons/search/#q=Pizza
 import { FaPizzaSlice } from "react-icons/fa6";
 import { TbSaladFilled } from "react-icons/tb";
 import { RiDrinks2Fill } from "react-icons/ri";
@@ -63,7 +67,6 @@ function Index() {
           </div>
         </Section>
       </Container>
-      <BottomNav />
     </>
   );
 }
