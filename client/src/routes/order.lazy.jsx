@@ -83,7 +83,7 @@ function Order() {
                   onChange={(e) => setPizzaType(e.target.value)}
                   name="pizza-type"
                   value={pizzaType}
-                  className="rounded-pill text-cosmic-space focus:ring-cosmic-orange w-full border border-[#EEDCC8] bg-white px-4 py-3 text-sm shadow-sm focus:ring-2 focus:outline-none"
+                  className="rounded-pill text-cosmic-space focus:ring-cosmic-orange w-1/2 border border-[#EEDCC8] bg-white px-4 py-3 text-sm shadow-sm focus:ring-2 focus:outline-none"
                 >
                   {pizzaTypes.map((pizza) => (
                     <option key={pizza.id} value={pizza.id}>
@@ -137,7 +137,7 @@ function Order() {
               <p className="font-display text-cosmic-midnight-plum">Loading…</p>
             ) : (
               <div className="flex flex-col items-center gap-3 md:gap-4">
-                <div className="rounded-card shadow-card h-40 w-40 overflow-hidden md:h-52 md:w-52">
+                <div className="rounded-card shadow-card h-80 w-full overflow-hidden">
                   <img
                     src={selectedPizza.image}
                     alt={selectedPizza.name}

@@ -13,11 +13,11 @@ const CardPizza: React.FC<CardPizzaProps> = ({
   price,
   image,
 }) => (
-  <article className="rounded-card shadow-card hover:shadow-deep bg-white p-3 transition md:p-4">
+  <article className="rounded-card shadow-card hover:shadow-deep bg-cosmic-sand p-3 transition md:p-4">
     <img
       src={image}
       alt={name}
-      className="rounded-card mb-3 h-32 w-full object-cover md:h-40"
+      className="rounded-card mb-3 h-40 w-full object-cover md:h-80"
     />
 
     <h3 className="font-display text-cosmic-space text-lg">{name}</h3>

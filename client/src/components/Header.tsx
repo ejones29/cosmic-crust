@@ -2,32 +2,39 @@ import { useContext } from "react";
 import { CartContext } from "../contexts.tsx";
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo.tsx";
-import stardust from "../public/star-dust-texture.png";
+import cosmicStardustBg from "../public/cosmic-stardust-bg.webp";
+import speckleTexture from "../public/speckle-texture.png";
+
 export const Header: React.FC = () => {
   const [cart] = useContext(CartContext);
   return (
-    <header className="bg-cosmic-midnight-plum relative overflow-hidden text-white">
+    <header className="bg-cosmic-midnight-plum relative overflow-hidden bg-cover bg-center bg-no-repeat text-white">
+      {/* Background Layer */}
+      <div
+        className="absolute inset-0 opacity-60"
+        style={{ backgroundImage: `url(${cosmicStardustBg})` }}
+      />
       {/* Stardust Layer (slow) */}
       <div
-        className="animate-stardust pointer-events-none absolute inset-0 opacity-20"
-        style={{ backgroundImage: `url(${stardust})` }}
+        className="animate-stardust-slow pointer-events-none absolute inset-0 bg-size-[600px_600px] bg-center bg-repeat"
+        style={{ backgroundImage: `url(${speckleTexture})` }}
       />
       {/* Stardust Layer (fast) */}
       <div
-        className="animate-stardust-fast pointer-events-none absolute inset-0 opacity-[0.12]"
-        style={{ backgroundImage: `url(${stardust})` }}
+        className="animate-stardust-fast pointer-events-none absolute inset-0 bg-size-[500px_500px] bg-center bg-repeat"
+        style={{ backgroundImage: `url(${speckleTexture})` }}
       />
 
       <div className="relative z-10 flex items-center justify-between px-4 py-4">
         <Link to={"/"} className="flex items-center justify-center">
-          <Logo className="h-24 w-24" />
+          <Logo className="h-20 w-20 md:h-24 md:w-24" />
         </Link>
         <nav className="hidden items-center gap-6 text-sm text-white md:flex">
           <Link to="/menu" className="nav-link">
             Menu
           </Link>
           <Link to="/order" className="nav-link">
-            Order
+            Order Now
           </Link>
           <Link to="/past" className="nav-link">
             Past Orders

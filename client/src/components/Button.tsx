@@ -18,13 +18,13 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-sans font-medium text-sm transition-all active:scale-[0.98] hover:cursor-pointer focus-visible:outline-none";
+    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-family-display text-lg transition-all active:scale-[0.98] hover:cursor-pointer focus-visible:outline-none";
 
   const variants: Record<Variant, string> = {
     primary:
-      "bg-cosmic-orange text-white shadow-card hover:bg-[#ff893d] focus-visible:ring-2 ring-cosmic-gold",
+      "bg-cosmic-gold text-cosmic-space shadow-card focus-visible:ring-2 ring-cosmic-gold",
     secondary:
-      "bg-cosmic-beige text-cosmic-space shadow-card hover:bg-[#f9dcc9] focus-visible:ring-2 ring-cosmic-gold",
+      "bg-cosmic-beige text-cosmic-space shadow-card focus-visible:ring-2 ring-cosmic-gold",
     ghost:
       "bg-transparent text-cosmic-space hover:bg-cosmic-beige/20 focus-visible:ring-2 ring-cosmic-gold",
   };

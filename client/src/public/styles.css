@@ -2,25 +2,26 @@
 
 @font-face {
   font-family: "Playfair Display";
-  src: url("./PlayfairDisplay-VariableFont_wght.ttf");
+  src: url("./fonts/PlayfairDisplay-Medium.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("./Inter-VariableFont_opsz,wght.ttf");
+  src: url("./fonts/Inter_18pt-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @theme {
   /* PRIMARY BRAND COLORS */
-  --color-cosmic-orange: #ba5a26; /* Hero background / brand orange */
-  --color-cosmic-gold: #f5c978; /* Highlights + accents */
+  --color-cosmic-orange: #9c471f; /* Hero background / brand orange */
+  --color-cosmic-gold: #ffa432; /* Highlights + accents */
   --color-cosmic-midnight-plum: #251636; /* Header, footer, nav, cosmic UI foundation */
-  /* --color-cosmic-plum: #2f1b44; */
   --color-cosmic-space: #0f0d17; /* Hero text / brand black */
 
   /* NEUTRALS */
-  --color-cosmic-beige: #f3e6d4; /* Warm page background (mockup-accurate) */
-  --color-cosmic-sand: #f2d9bd; /* Cards, secondary surfaces */
+  --color-cosmic-beige: #f6ecdd; /* Warm page background */
+  --color-cosmic-sand: #eecfb0; /* Cards, secondary surfaces */
 
   /* SUPPORT TONES (Brand Depth) */
   --color-cosmic-rose: #eec5aa; /* Soft supporting hue */
