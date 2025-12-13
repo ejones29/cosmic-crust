@@ -1,4 +1,13 @@
-export default async function postContact(name, email, message) {
+interface ContactResponse {
+  success: boolean;
+  message?: string;
+}
+
+export default async function postContact(
+  name: string,
+  email: string,
+  message: string
+): Promise<ContactResponse> {
   const response = await fetch("/api/contact", {
     method: "POST",
     headers: {
