@@ -91,14 +91,14 @@ npm run dev
 
 ### **Desktop Experience**
 <p align="center">
-  <img src="./public/screenshots/home-desktop.png" alt="Cosmic Crust Desktop Home Screen" width="800"/>
+  <img src="./client/src/public/screenshots/home-desktop.png" alt="Cosmic Crust Desktop Home Screen" width="800"/>
 </p>
 
 ---
 
 ### **Mobile Experience**
 <p align="center">
-  <img src="./public/screenshots/home-mobile.png" alt="Cosmic Crust Mobile Home Screen" width="350"/>
+  <img src="./client/src/public/screenshots/home-mobile.png" alt="Cosmic Crust Mobile Home Screen" width="350"/>
 </p>
 
 > The Cosmic Crust UI adapts seamlessly across devices, maintaining consistent branding, layout integrity, and a polished, app-like user experience.
