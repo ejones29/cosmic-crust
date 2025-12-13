@@ -7,6 +7,7 @@ import { HiHome } from "react-icons/hi";
 import { FaReceipt, FaPizzaSlice } from "react-icons/fa";
 // import { RiAccountCircleFill } from "react-icons/ri";
 import { RiShoppingCart2Fill } from "react-icons/ri";
+import { FiMessageCircle } from "react-icons/fi";
 
 const NavItem = ({
   label,
@@ -36,8 +37,9 @@ const BottomNav: React.FC = () => {
   return (
     <nav className="bg-cosmic-midnight-plum shadow-deep rounded-pill fixed bottom-4 left-1/2 z-50 flex w-[92%] max-w-sm -translate-x-1/2 justify-around px-2 py-3 pb-[calc(env(safe-area-inset-bottom,0px)+0.75rem)] md:hidden">
       <NavItem label="Home" icon={<HiHome />} to="/" />
-      <NavItem label="Menu" icon={<FaPizzaSlice />} to="/menu" />
+      {/* <NavItem label="Menu" icon={<FaPizzaSlice />} to="/menu" /> */}
       <NavItem label="Order" icon={<FaReceipt />} to="/order" />
+      <NavItem label="Contact" icon={<FiMessageCircle />} to="/contact" />
       {/* Cart with badge */}
       <NavItem
         label="Cart"
