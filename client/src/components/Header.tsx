@@ -33,12 +33,12 @@ export const Header: React.FC = () => {
 
         {/* Center nav (desktop only) */}
         <nav className="hidden items-center gap-8 text-sm text-white md:flex">
-          <Link
+          {/* <Link
             to="/menu"
             className="text-white/85 transition-colors hover:text-white hover:drop-shadow-[0_0_6px_rgba(245,201,120,0.55)]"
           >
             Menu
-          </Link>
+          </Link> */}
           <Link
             to="/order"
             className="text-white/85 transition-colors hover:text-white hover:drop-shadow-[0_0_6px_rgba(245,201,120,0.55)]"
@@ -50,6 +50,12 @@ export const Header: React.FC = () => {
             className="text-white/85 transition-colors hover:text-white hover:drop-shadow-[0_0_6px_rgba(245,201,120,0.55)]"
           >
             Past Orders
+          </Link>
+          <Link
+            to="/contact"
+            className="text-white/85 transition-colors hover:text-white hover:drop-shadow-[0_0_6px_rgba(245,201,120,0.55)]"
+          >
+            Contact
           </Link>
         </nav>
         {/* Right: Cart Icon */}
