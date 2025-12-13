@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import { createLazyFileRoute } from "@tanstack/react-router";
-import Container from "../components/Container";
-import Cart from "../components/Cart";
-import { CartContext } from "../contexts";
+import Container from "../components/Container.tsx";
+import Cart from "../components/Cart.tsx";
+import { CartContext } from "../contexts.tsx";
 import { useCurrencyFormatter } from "../hooks/useCurrencyFormatter.tsx";
 
 export const Route = createLazyFileRoute("/order")({
